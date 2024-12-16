@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing Counter</title>
+  <style>
+    body {
+      background-color: #f0f8ff; /* Warna cerah */
+      font-family: Arial, sans-serif;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+    }
+    h1 {
+      color: #333;
+margin-bottom: 20px;
+    }
+    button {
+      background-color: #ff4c4c; /* Merah cerah */
+      color: white;
+      border: none;
+      width: 80px;
+      height: 80px;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 50%; /* Membuat bentuk bulat */
+      box-shadow: 0 8px 15px rgba(255, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.6) inset;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover {
+      transform: scale(1.1); /* Efek zoom saat hover */
+      box-shadow: 0 10px 20px rgba(255, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.8) inset;
+    }
+    button:active {
+      transform: scale(0.9); /* Efek kecil saat ditekan */
+      box-shadow: 0 5px 10px rgba(255, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.5) inset;
+    }
+    #counter {
+      font-size: 24px;
+      color: #333;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>TEKAN TOMBOL INI BLUD</h1>
+  <button onclick="incrementCounter()">Klik</button>
+  <div id="counter">0</div>
+
+  <script>
+    let count = 0;
+
+    function incrementCounter() {
+      count++;
+      document.getElementById('counter').innerText = count;
+
+const clickSound = document.getElementById('clickSound');
+      clickSound.currentTime = 0; // Reset audio ke awal
+      clickSound.play();
+    }
+  </script>
+</body>
+</html>
